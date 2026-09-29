@@ -1,0 +1,213 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Sheltr - Welcome / Role Selection</title>
+<!-- Tailwind CSS v3 with Plugins -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Google Fonts: Plus Jakarta Sans for clean iOS styling -->
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+<!-- Tailwind Configuration -->
+<script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            sheltr: {
+              50: '#FFF5F2',
+              100: '#FFE9E4',
+              200: '#FFD4CB',
+              500: '#FF5738',
+              600: '#F04828',
+              700: '#D9391B',
+            },
+            neutral: {
+              850: '#1D2128',
+            }
+          },
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'system-ui', '-apple-system', 'sans-serif'],
+          },
+          boxShadow: {
+            'coral-glow': '0 8px 24px -4px rgba(255, 87, 56, 0.35)',
+            'card-soft': '0 2px 10px rgba(0, 0, 0, 0.03)',
+          }
+        }
+      }
+    }
+  </script>
+<!-- Custom CSS for Viewport and Fine Details -->
+<style data-purpose="base-styling">
+    body {
+      font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+  </style>
+</head>
+<body class="bg-stone-100 flex items-center justify-center min-h-screen p-0 sm:p-4 text-slate-800 antialiased selection:bg-sheltr-100 selection:text-sheltr-600">
+<!-- BEGIN: MobileContainer -->
+<!-- Target device container: 390px fixed width mobile frame matching iOS screen proportions -->
+<main class="w-full max-w-[390px] h-[844px] bg-white sm:rounded-[44px] shadow-2xl relative flex flex-col justify-between overflow-hidden border border-slate-100 sm:border-slate-200/80">
+<!-- BEGIN: TopAppHeaderSection -->
+<header class="w-full pt-3 px-6 shrink-0 z-10">
+<!-- iOS Status Bar -->
+<div class="w-full flex justify-between items-center h-8 text-[15px] font-semibold text-slate-900 tracking-tight select-none" data-purpose="ios-status-bar">
+<span>9:41</span>
+<div class="flex items-center space-x-1.5 text-slate-900">
+<!-- Cellular Signal -->
+<svg class="w-4 h-4 fill-current" viewBox="0 0 16 16">
+<rect height="4" rx="0.5" width="2.2" x="1" y="10.5"></rect>
+<rect height="6.5" rx="0.5" width="2.2" x="4.4" y="8"></rect>
+<rect height="9.5" rx="0.5" width="2.2" x="7.8" y="5"></rect>
+<rect height="12.5" rx="0.5" width="2.2" x="11.2" y="2"></rect>
+</svg>
+<!-- Wifi -->
+<svg class="w-4 h-4 fill-current" viewBox="0 0 16 16">
+<path clip-rule="evenodd" d="M8 12.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3zm-3.87-3.37a5.5 5.5 0 0 1 7.74 0 .75.75 0 0 0 1.06-1.06 7 7 0 0 0-9.86 0 .75.75 0 1 0 1.06 1.06zm-2.12-2.12a8.5 8.5 0 0 1 11.98 0 .75.75 0 1 0 1.06-1.06 10 10 0 0 0-14.1 0 .75.75 0 1 0 1.06 1.06z" fill-rule="evenodd"></path>
+</svg>
+<!-- Battery Icon -->
+<div class="w-5 h-2.5 border-[1.5px] border-slate-900 rounded-[4px] p-0.5 flex items-center relative">
+<div class="h-full w-full bg-slate-900 rounded-[1.5px]"></div>
+<div class="absolute -right-1 top-0.5 h-1.5 w-0.5 bg-slate-900 rounded-r"></div>
+</div>
+</div>
+</div>
+<!-- Navigation Bar with Back Button -->
+<nav class="mt-2 flex items-center" data-purpose="nav-bar">
+<button aria-label="Go back" class="w-10 h-10 -ml-2 rounded-full flex items-center justify-center text-slate-800 hover:bg-slate-50 active:scale-95 transition-all">
+<svg class="w-6 h-6 stroke-[2.2] stroke-current fill-none" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+<polyline points="15 18 9 12 15 6"></polyline>
+</svg>
+</button>
+</nav>
+</header>
+<!-- END: TopAppHeaderSection -->
+<!-- BEGIN: MainContent -->
+<div class="px-7 pt-4 pb-2 flex-1 flex flex-col justify-start">
+<!-- Brand Logo Header -->
+<div class="flex flex-col items-center justify-center mt-1 mb-8" data-purpose="brand-identity">
+<div class="flex items-center gap-2.5">
+<!-- Coral House Roof / Arch Logo -->
+<div class="w-10 h-10 text-sheltr-500 flex items-center justify-center">
+<svg class="w-full h-full drop-shadow-sm" fill="none" viewBox="0 0 36 36">
+<path d="M18 4L4 15V30C4 31.1046 4.89543 32 6 32H13C14.1046 32 15 31.1046 15 30V22C15 20.8954 15.8954 20 17 20H19C20.1046 20 21 20.8954 21 22V30C21 31.1046 21.8954 32 23 32H30C31.1046 32 32 31.1046 32 30V15L18 4Z" fill="currentColor"></path>
+<path d="M18 10L9 17.5V30H13V22C13 19.7909 14.7909 18 17 18H19C21.2091 18 23 19.7909 23 22V30H27V17.5L18 10Z" fill="white"></path>
+</svg>
+</div>
+<span class="text-3xl font-bold tracking-tight text-slate-900 font-sans">Sheltr</span>
+</div>
+</div>
+<!-- Welcome Headings -->
+<div class="text-left mb-7" data-purpose="intro-text">
+<h1 class="text-[30px] font-extrabold text-slate-900 leading-[1.18] tracking-tight">
+          Find your<br>perfect home
+        </h1>
+<p class="mt-2.5 text-[14.5px] leading-relaxed text-slate-500 font-normal">
+          Verified homes. No brokerage.<br>Built for a better renting experience.
+        </p>
+</div>
+<!-- Role Selection Cards Container -->
+<section aria-label="Select your role" class="space-y-3.5 my-auto" data-purpose="role-selection">
+<!-- Card 1: Find a home (Selected by default) -->
+<label class="relative group block cursor-pointer select-none" for="role-tenant">
+<input checked="" class="peer sr-only" id="role-tenant" name="user_role" type="radio" value="tenant">
+<div class="flex items-center p-4 rounded-2xl border-2 transition-all duration-200 border-sheltr-500 bg-sheltr-50/60 shadow-sm peer-checked:border-sheltr-500 peer-checked:bg-sheltr-50/70">
+<!-- Icon Container -->
+<div class="w-12 h-12 rounded-xl bg-white border border-sheltr-200/60 text-sheltr-500 flex items-center justify-center shrink-0 shadow-sm mr-3.5">
+<svg class="w-6 h-6 stroke-[1.8] stroke-current fill-none" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+<path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+<polyline points="9 22 9 12 15 12 15 22"></polyline>
+</svg>
+</div>
+<!-- Text Content -->
+<div class="flex-1 pr-2">
+<h2 class="text-[15.5px] font-bold text-slate-900 tracking-tight">Find a home to rent</h2>
+<p class="text-[12.5px] text-slate-500 leading-snug mt-0.5">Browse verified homes, save favourites, contact owners.</p>
+</div>
+<!-- Radio Indicator -->
+<div class="w-5 h-5 rounded-full border-2 border-sheltr-500 flex items-center justify-center shrink-0 bg-white">
+<div class="w-2.5 h-2.5 rounded-full bg-sheltr-500"></div>
+</div>
+</div>
+</label>
+<!-- Card 2: List my property (Unselected) -->
+<label class="relative group block cursor-pointer select-none" for="role-owner">
+<input class="peer sr-only" id="role-owner" name="user_role" type="radio" value="owner">
+<div class="flex items-center p-4 rounded-2xl border-2 border-slate-150 bg-white hover:border-slate-300 transition-all duration-200 shadow-card-soft peer-checked:border-sheltr-500 peer-checked:bg-sheltr-50/70">
+<!-- Icon Container -->
+<div class="w-12 h-12 rounded-xl bg-slate-50 border border-slate-100 text-slate-700 flex items-center justify-center shrink-0 mr-3.5 group-hover:border-slate-200">
+<svg class="w-6 h-6 stroke-[1.8] stroke-current fill-none" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+<path d="M21 2l-2 2m-1.5 1.5L16 7m-1.5 1.5L13 10m-1.5 1.5L10 13"></path>
+<path d="M15.5 10.5a5.5 5.5 0 1 1-7.78-7.78 5.5 5.5 0 0 1 7.78 7.78z"></path>
+<path d="M7 17l-5 5v-3l2-2h3z"></path>
+</svg>
+</div>
+<!-- Text Content -->
+<div class="flex-1 pr-2">
+<h2 class="text-[15.5px] font-bold text-slate-900 tracking-tight">List my property</h2>
+<p class="text-[12.5px] text-slate-500 leading-snug mt-0.5">Free to list, get verified badge, reach genuine tenants.</p>
+</div>
+<!-- Radio Indicator Unchecked -->
+<div class="w-5 h-5 rounded-full border-2 border-slate-300 flex items-center justify-center shrink-0 group-hover:border-slate-400 bg-white">
+<div class="w-2.5 h-2.5 rounded-full bg-transparent"></div>
+</div>
+</div>
+</label>
+</section>
+</div>
+<!-- END: MainContent -->
+<!-- BEGIN: BottomActionFooter -->
+<footer class="px-7 pb-8 pt-2 w-full flex flex-col items-center">
+<!-- Primary Continue CTA Button -->
+<button class="w-full h-14 bg-gradient-to-r from-sheltr-500 to-sheltr-600 hover:from-sheltr-600 hover:to-sheltr-700 active:scale-[0.985] text-white font-semibold text-[16px] rounded-2xl shadow-coral-glow flex items-center justify-center gap-2 transition-all duration-150" data-purpose="submit-role-button" type="button">
+<span>Continue</span>
+<svg class="w-4 h-4 stroke-[2.4] stroke-current fill-none" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+<line x1="5" x2="19" y1="12" y2="12"></line>
+<polyline points="12 5 19 12 12 19"></polyline>
+</svg>
+</button>
+<!-- Already have an account link -->
+<div class="mt-4 text-center">
+<p class="text-[13.5px] text-slate-500">
+          Already have an account? 
+          <a class="text-sheltr-500 hover:text-sheltr-600 font-semibold transition-colors duration-150 ml-0.5" href="#login">Log in</a>
+</p>
+</div>
+<!-- iOS Home Indicator -->
+<div class="w-32 h-1 bg-slate-900/90 rounded-full mt-6 mb-0.5" data-purpose="ios-home-indicator"></div>
+</footer>
+<!-- END: BottomActionFooter -->
+</main>
+<!-- END: MobileContainer -->
+<!-- Interactivity Script for Radio Selection state styling -->
+<script data-purpose="role-toggle-handler">
+    document.addEventListener('DOMContentLoaded', () => {
+      const radios = document.querySelectorAll('input[name="user_role"]');
+      
+      radios.forEach(radio => {
+        radio.addEventListener('change', () => {
+          radios.forEach(r => {
+            const card = r.nextElementSibling;
+            const iconBox = card.querySelector('div:first-child');
+            const radioDot = card.querySelector('div:last-child div');
+            const radioCircle = card.querySelector('div:last-child');
+            
+            if (r.checked) {
+              card.className = "flex items-center p-4 rounded-2xl border-2 transition-all duration-200 border-sheltr-500 bg-sheltr-50/70 shadow-sm";
+              iconBox.className = "w-12 h-12 rounded-xl bg-white border border-sheltr-200/60 text-sheltr-500 flex items-center justify-center shrink-0 shadow-sm mr-3.5";
+              radioCircle.className = "w-5 h-5 rounded-full border-2 border-sheltr-500 flex items-center justify-center shrink-0 bg-white";
+              radioDot.className = "w-2.5 h-2.5 rounded-full bg-sheltr-500";
+            } else {
+              card.className = "flex items-center p-4 rounded-2xl border-2 border-slate-150 bg-white hover:border-slate-300 transition-all duration-200 shadow-card-soft";
+              iconBox.className = "w-12 h-12 rounded-xl bg-slate-50 border border-slate-100 text-slate-700 flex items-center justify-center shrink-0 mr-3.5";
+              radioCircle.className = "w-5 h-5 rounded-full border-2 border-slate-300 flex items-center justify-center shrink-0 bg-white";
+              radioDot.className = "w-2.5 h-2.5 rounded-full bg-transparent";
+            }
+          });
+        });
+      });
+    });
+  </script>
+</body></html>

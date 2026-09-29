@@ -1,0 +1,191 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport">
+<title>Sheltr - Review &amp; Publish</title>
+<!-- Tailwind CSS CDN with plugins -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Google Fonts: Plus Jakarta Sans -->
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+<script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+          },
+          colors: {
+            brand: {
+              50: '#FFF5F3',
+              100: '#FEE9E5',
+              400: '#F88D79',
+              500: '#EF7560',
+              600: '#E05942',
+            },
+            neutral: {
+              25: '#FCFCFD',
+              50: '#F9FAFB',
+              100: '#F3F4F6',
+              200: '#E5E7EB',
+              400: '#9CA3AF',
+              500: '#6B7280',
+              700: '#374151',
+              900: '#111827',
+            }
+          },
+          boxShadow: {
+            'coral-cta': '0 8px 24px -4px rgba(239, 117, 96, 0.35)',
+            'card-soft': '0 2px 10px rgba(0, 0, 0, 0.03), 0 1px 3px rgba(0, 0, 0, 0.04)',
+          }
+        }
+      }
+    }
+  </script>
+<style data-purpose="custom-scroll-and-viewport">
+    /* Hide scrollbars for clean native iOS presentation */
+    ::-webkit-scrollbar {
+      display: none;
+    }
+    * {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+      -webkit-tap-highlight-color: transparent;
+    }
+    body {
+      background-color: #ECEEEF;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      margin: 0;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+  </style>
+</head>
+<body class="antialiased">
+<!-- Mobile Screen Container (iPhone standard width: 390px) -->
+<div class="relative w-[390px] h-[844px] bg-white overflow-hidden shadow-2xl flex flex-col justify-between select-none">
+<!-- BEGIN: TopStatusBar -->
+<header class="w-full bg-white z-20 flex-shrink-0" data-purpose="top-navigation-area">
+<!-- iOS Status Bar -->
+<div class="h-11 px-7 flex justify-between items-end pb-1 text-black font-semibold text-[14px]">
+<span>9:41</span>
+<div class="flex items-center space-x-1.5 pb-0.5">
+<!-- Signal Icon -->
+<svg class="w-4 h-3.5 fill-current" viewBox="0 0 17 12">
+<rect height="3" rx="0.5" width="2.5" x="0" y="9"></rect>
+<rect height="5.5" rx="0.5" width="2.5" x="4" y="6.5"></rect>
+<rect height="8.5" rx="0.5" width="2.5" x="8" y="3.5"></rect>
+<rect height="11.5" rx="0.5" width="2.5" x="12" y="0.5"></rect>
+</svg>
+<!-- Wifi Icon -->
+<svg class="w-4 h-3.5 fill-current" viewBox="0 0 16 12">
+<path d="M8 2.8c2.8 0 5.4 1.1 7.3 2.9l-1.4 1.4C12.4 5.6 10.3 4.8 8 4.8s-4.4.8-5.9 2.3L.7 5.7C2.6 3.9 5.2 2.8 8 2.8zm0 4c1.7 0 3.2.7 4.3 1.8l-1.4 1.4c-.8-.8-1.8-1.2-2.9-1.2s-2.1.4-2.9 1.2L3.7 8.6C4.8 7.5 6.3 6.8 8 6.8zm0 4c.8 0 1.5.3 2 0.8L8 13.6 6 11.6c.5-.5 1.2-.8 2-.8z"></path>
+</svg>
+<!-- Battery Icon -->
+<div class="w-5 h-2.5 border border-black rounded-[4px] p-0.5 flex items-center">
+<div class="bg-black w-full h-full rounded-[1.5px]"></div>
+</div>
+</div>
+</div>
+<!-- App Header Bar with Back Button & Progress Dots -->
+<div class="px-5 pt-2 pb-3 flex items-center justify-between">
+<!-- Back Chevron -->
+<button aria-label="Go back" class="w-9 h-9 -ml-2 rounded-full flex items-center justify-center text-neutral-900 active:bg-neutral-100 transition-colors">
+<svg class="w-5 h-5 text-neutral-800" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewBox="0 0 24 24">
+<polyline points="15 18 9 12 15 6"></polyline>
+</svg>
+</button>
+<!-- Progress Indicator Dots (Final step active) -->
+<div class="flex items-center space-x-1.5" data-purpose="stepper">
+<span class="w-1.5 h-1.5 rounded-full bg-neutral-200"></span>
+<span class="w-1.5 h-1.5 rounded-full bg-neutral-200"></span>
+<span class="w-1.5 h-1.5 rounded-full bg-neutral-200"></span>
+<span class="w-4 h-1.5 rounded-full bg-brand-500"></span>
+</div>
+<div class="w-7"></div>
+</div>
+</header>
+<!-- END: TopStatusBar -->
+<!-- BEGIN: MainContent -->
+<main class="flex-1 overflow-y-auto px-5 pt-1 pb-6" data-purpose="review-content">
+<!-- Screen Title & Description -->
+<div class="mb-5">
+<h1 class="text-[23px] font-bold text-neutral-900 tracking-tight leading-tight">Review &amp; publish</h1>
+<p class="text-[13px] text-neutral-500 mt-1 leading-normal">
+          Review your listing details before making it visible to thousands of verified tenants.
+        </p>
+</div>
+<!-- Listing Preview Card -->
+<section class="border border-neutral-100 bg-white rounded-2xl p-3 shadow-card-soft mb-6" data-purpose="property-preview-card">
+<div class="flex gap-3.5">
+<!-- Thumbnail Image -->
+<div class="relative w-[100px] h-[92px] rounded-xl overflow-hidden flex-shrink-0 bg-neutral-100">
+<img alt="Living room interior view of 1 BHK Apartment" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDFiSpBQfzPuhQCD3F7PvyQr8r4PvVCv9orhC27LHz8Vb522TDuDMqa4BuLmF7Ng9-D5dK3Hw70m16SPDf47KOLArcL0_Q451qFPhzph4IpLY6dMznRb0ITOPIe2GQS7Q2WwoqxZVewhobLhYB5ZPo2Ph1xxA2U7NAXEKtjoJVeirYiEk187Dq0stzwbd5erGiTIliqfNw-aYdP6XQmA12O27o0r4vpVHxelcLY0yVIGINiqYiEfOKt">
+<div class="absolute bottom-1 right-1 bg-black/60 backdrop-blur-xs text-white text-[9px] font-medium px-1.5 py-0.5 rounded">
+              1/6
+            </div>
+</div>
+<!-- Property Info Details -->
+<div class="flex flex-col justify-between py-0.5 flex-1 min-w-0">
+<div>
+<div class="flex items-center justify-between">
+<h2 class="text-[15px] font-bold text-neutral-900 truncate">1 BHK Apartment</h2>
+</div>
+<p class="text-[12px] text-neutral-500 mt-0.5 truncate font-medium">HSR Layout, Bangalore</p>
+<!-- Specs Row -->
+<p class="text-[11.5px] text-neutral-400 mt-1 font-medium">
+                1 Bed &nbsp;•&nbsp; 1 Bath &nbsp;•&nbsp; 700 sq ft
+              </p>
+</div>
+<!-- Rental Price -->
+<div class="flex items-baseline space-x-1 mt-1.5">
+<span class="text-[16px] font-bold text-brand-500 tracking-tight">₹20,000</span>
+<span class="text-[11.5px] text-neutral-400 font-medium">/ month</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Amenities Section -->
+<section class="mb-6" data-purpose="amenities-selection">
+<h3 class="text-[14px] font-semibold text-neutral-900 mb-2.5">Amenities</h3>
+<div class="flex flex-wrap gap-2">
+<!-- Amenities Chips -->
+<span class="inline-flex items-center px-3 py-1.5 bg-neutral-50 border border-neutral-200/70 rounded-full text-[12px] font-medium text-neutral-700">
+            Wi-Fi
+          </span>
+<span class="inline-flex items-center px-3 py-1.5 bg-neutral-50 border border-neutral-200/70 rounded-full text-[12px] font-medium text-neutral-700">
+            AC
+          </span>
+<span class="inline-flex items-center px-3 py-1.5 bg-neutral-50 border border-neutral-200/70 rounded-full text-[12px] font-medium text-neutral-700">
+            Lift
+          </span>
+<span class="inline-flex items-center px-3 py-1.5 bg-neutral-50 border border-neutral-200/70 rounded-full text-[12px] font-medium text-neutral-700">
+            Parking
+          </span>
+</div>
+</section>
+<!-- Description Section -->
+<section class="mb-4" data-purpose="description-text">
+<h3 class="text-[14px] font-semibold text-neutral-900 mb-2">Description</h3>
+<p class="text-[13px] text-neutral-600 leading-relaxed bg-neutral-50/70 border border-neutral-100 rounded-xl p-3.5">
+          Beautiful 1 BHK apartment with ample natural light and easy access to IT hubs.
+        </p>
+</section>
+</main>
+<!-- END: MainContent -->
+<!-- BEGIN: BottomActionSection -->
+<footer class="p-5 pt-3 bg-white border-t border-neutral-100/60 flex-shrink-0" data-purpose="action-cta">
+<!-- Publish Listing Primary CTA -->
+<button class="w-full py-3.5 px-4 bg-brand-500 hover:bg-brand-600 active:scale-[0.99] text-white font-semibold text-[15px] rounded-xl transition-all duration-150 shadow-coral-cta flex items-center justify-center cursor-pointer" type="button">
+        Publish listing
+      </button>
+<!-- iOS Home Bar Indicator -->
+<div class="w-full flex justify-center mt-4 mb-0.5">
+<div class="w-32 h-1 bg-neutral-900 rounded-full"></div>
+</div>
+</footer>
+<!-- END: BottomActionSection -->
+</div>
+</body></html>

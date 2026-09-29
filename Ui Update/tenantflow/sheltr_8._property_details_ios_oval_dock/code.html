@@ -1,0 +1,207 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport">
+<title>Property Details - Sheltr</title>
+<!-- Tailwind CSS CDN with plugins -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Configuration -->
+<script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              50: '#FDF4F2',
+              100: '#FCE7E4',
+              500: '#EF7560',
+              600: '#E25E48',
+              700: '#C94732'
+            },
+            verified: {
+              bg: '#EAF8F1',
+              text: '#1B8755'
+            }
+          },
+          fontFamily: {
+            sans: ['-apple-system', 'BlinkMacSystemFont', '"SF Pro Display"', '"SF Pro Text"', 'Roboto', 'Helvetica', 'Arial', 'sans-serif']
+          },
+          boxShadow: {
+            'floating-bar': '0 -4px 20px rgba(0, 0, 0, 0.06)',
+            'glass': '0 4px 12px rgba(0, 0, 0, 0.12)'
+          }
+        }
+      }
+    };
+  </script>
+<style data-purpose="custom-layout">
+    /* Disable bounce scrolling and hide scrollbar for iOS aesthetic */
+    body {
+      -webkit-tap-highlight-color: transparent;
+      overscroll-behavior-y: none;
+    }
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+    .safe-top {
+      padding-top: env(safe-area-inset-top, 14px);
+    }
+    .safe-bottom {
+      padding-bottom: env(safe-area-inset-bottom, 20px);
+    }
+  </style>
+</head>
+<body class="bg-slate-100 flex justify-center items-center min-h-screen font-sans antialiased text-slate-800">
+<!-- BEGIN: MobileDeviceFrame -->
+<div class="w-full max-w-[393px] h-[852px] max-h-screen bg-white relative flex flex-col overflow-hidden shadow-2xl md:rounded-[44px] border border-slate-200">
+<!-- BEGIN: iOSStatusBar -->
+<header class="absolute top-0 left-0 right-0 z-30 flex items-center justify-between px-7 safe-top pt-3 text-white mix-blend-difference select-none pointer-events-none">
+<span class="text-[15px] font-semibold tracking-tight">9:41</span>
+<div class="flex items-center space-x-2">
+<!-- Cellular Signal Icon -->
+<svg class="w-4 h-3 fill-current" viewBox="0 0 17 11">
+<rect height="3" rx="0.5" width="3" x="0" y="8"></rect>
+<rect height="5.5" rx="0.5" width="3" x="4.5" y="5.5"></rect>
+<rect height="8" rx="0.5" width="3" x="9" y="3"></rect>
+<rect height="11" rx="0.5" width="3" x="13.5" y="0"></rect>
+</svg>
+<!-- Wifi Icon -->
+<svg class="w-4 h-3 fill-current" viewBox="0 0 16 12">
+<path d="M8 12a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5.07-5.07a7.17 7.17 0 0 0-10.14 0 .75.75 0 0 1-1.06-1.06 8.67 8.67 0 0 1 12.26 0 .75.75 0 0 1-1.06 1.06zm-2.12 2.12a4.17 4.17 0 0 0-5.9 0 .75.75 0 1 1-1.06-1.06 5.67 5.67 0 0 1 8.02 0 .75.75 0 0 1-1.06 1.06z"></path>
+</svg>
+<!-- Battery Icon -->
+<div class="w-6 h-3 border border-current rounded-sm p-0.5 flex items-center">
+<div class="h-full w-4/5 bg-current rounded-xs"></div>
+</div>
+</div>
+</header>
+<!-- END: iOSStatusBar -->
+<!-- BEGIN: MainContentScrollArea -->
+<main class="flex-1 overflow-y-auto no-scrollbar pb-28">
+<!-- BEGIN: HeroImageSection -->
+<section aria-label="Property Media Gallery" class="relative w-full h-[310px] bg-slate-200">
+<!-- Main Apartment Photo -->
+<img alt="Modern 1 BHK Apartment living room with sofa, warm lighting, and aesthetic layout" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC6FeTro7l_NrsAv_LTIpiMx9D3KBcWRlEpn16UCiJrtik3IpmfjXCQY2AekaaWZwJA8YyvTJ46R1au_CWoUNbn3AzgSEyoLqSZ2mz59CR1fcPJGKWj7Rxa52klyxtE9K8SiqTj-kIcHdRUeVoLh_UHQObL0J69hAUmnYtithVmc-GpPNwikpdN6oleHQ3qfppdlx4rlKOXEBkC-QrpVXB6l5hSzYAhdA59uPJQcc5V_WmBgEFNSi_D">
+<!-- Top Navigation Overlay -->
+<div class="absolute top-12 left-0 right-0 px-5 flex items-center justify-between z-20">
+<!-- Back Button -->
+<button aria-label="Go back" class="w-10 h-10 rounded-full bg-white/75 backdrop-blur-md flex items-center justify-center text-slate-800 shadow-glass active:scale-95 transition-transform" type="button">
+<svg class="w-5 h-5 -ml-0.5 stroke-[2.5]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M15.75 19.5L8.25 12l7.5-7.5" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</button>
+<!-- Right Action Icons (Share & Wishlist) -->
+<div class="flex items-center space-x-2.5">
+<button aria-label="Share property" class="w-10 h-10 rounded-full bg-white/75 backdrop-blur-md flex items-center justify-center text-slate-800 shadow-glass active:scale-95 transition-transform" type="button">
+<svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+<path d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5m-13.5-9L12 3m0 0l4.5 4.5M12 3v13.5" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</button>
+<button aria-label="Add to favorites" class="w-10 h-10 rounded-full bg-white/75 backdrop-blur-md flex items-center justify-center text-slate-800 shadow-glass active:scale-95 transition-transform" type="button">
+<svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+<path d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</button>
+</div>
+</div>
+<!-- Image Gallery Pagination Indicator Badge -->
+<div class="absolute bottom-4 right-5 bg-black/60 backdrop-blur-md text-white px-2.5 py-1 rounded-full text-xs font-medium tracking-wide">
+          1/8
+        </div>
+</section>
+<!-- END: HeroImageSection -->
+<!-- BEGIN: PropertyOverview -->
+<section aria-label="Property Overview" class="p-5">
+<!-- Title and Location -->
+<div class="mb-3">
+<h1 class="text-[22px] font-bold text-slate-900 leading-snug tracking-tight">
+            1 BHK Apartment
+          </h1>
+<div class="flex items-center text-slate-500 text-sm mt-1">
+<svg class="w-4 h-4 mr-1 text-slate-400 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+<path d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" stroke-linecap="round" stroke-linejoin="round"></path>
+<path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<span class="">HSR Layout, Bangalore</span>
+</div>
+</div>
+<!-- Price and Verification Badge -->
+<div class="flex items-center justify-between pb-4 border-b border-slate-100">
+<div class="flex items-baseline space-x-1.5">
+<span class="text-2xl font-bold text-brand-500 tracking-tight">₹20,000</span>
+<span class="text-sm font-medium text-slate-400">/ month</span>
+</div>
+<!-- Verified Badge -->
+<div class="flex items-center px-2.5 py-1 rounded-full bg-emerald-50 text-emerald-700 text-xs font-semibold space-x-1 border border-emerald-100/80">
+<svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 20 20">
+<path clip-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" fill-rule="evenodd"></path>
+</svg>
+<span class="">Verified</span>
+</div>
+</div>
+<!-- Metric Chips (Bed, Bath, Area) -->
+<div class="flex items-center gap-2.5 py-4 border-b border-slate-100">
+<div class="flex-1 flex items-center justify-center py-2 px-3 bg-slate-50 border border-slate-100 rounded-xl text-xs font-semibold text-slate-700 space-x-1.5">
+<span class="">🛏</span>
+<span class="">1 Bed</span>
+</div>
+<div class="flex-1 flex items-center justify-center py-2 px-3 bg-slate-50 border border-slate-100 rounded-xl text-xs font-semibold text-slate-700 space-x-1.5">
+<span class="">🚿</span>
+<span class="">1 Bath</span>
+</div>
+<div class="flex-1 flex items-center justify-center py-2 px-3 bg-slate-50 border border-slate-100 rounded-xl text-xs font-semibold text-slate-700 space-x-1.5">
+<span class="">📐</span>
+<span class="">700 sq ft</span>
+</div>
+</div>
+<!-- Tag Pills (Furnished, Parking, Family) -->
+<div class="flex flex-wrap gap-2 pt-4">
+<span class="px-3.5 py-1.5 bg-slate-100/90 text-slate-600 rounded-lg text-xs font-medium tracking-tight">
+            Furnished
+          </span>
+<span class="px-3.5 py-1.5 bg-slate-100/90 text-slate-600 rounded-lg text-xs font-medium tracking-tight">
+            Parking
+          </span>
+<span class="px-3.5 py-1.5 bg-slate-100/90 text-slate-600 rounded-lg text-xs font-medium tracking-tight">
+            Family
+          </span>
+</div>
+</section>
+<!-- END: PropertyOverview -->
+<!-- BEGIN: PropertyDescription -->
+<section aria-label="Description Section" class="px-5 pt-2 pb-6">
+<h2 class="text-base font-bold text-slate-900 mb-2">
+          About this home
+        </h2>
+<p class="text-sm leading-relaxed text-slate-600">
+          Beautiful 1 BHK apartment with ample natural light, located in a prime area with easy access to IT hubs, markets and transport.
+        </p>
+</section>
+<!-- END: PropertyDescription -->
+</main>
+<!-- END: MainContentScrollArea -->
+<!-- BEGIN: StickyBottomBar -->
+<nav aria-label="Actions Bar" class="absolute bottom-0 left-0 right-0 px-5 pb-5 pt-2 pointer-events-none z-30 flex flex-col items-center">
+<!-- Floating Frosted Glass Action Pill -->
+<div class="pointer-events-auto w-full max-w-[353px] bg-white/90 backdrop-blur-md border border-white/80 shadow-2xl rounded-full p-2 flex items-center gap-2.5">
+<!-- Call Button (Secondary Circular / Compact Pill) -->
+<button aria-label="Call Owner" class="h-12 w-12 rounded-full border border-slate-200 bg-white flex items-center justify-center text-slate-800 shadow-sm active:scale-95 transition-all hover:bg-slate-50 shrink-0" type="button">
+<svg class="w-5 h-5 fill-current text-slate-700 rotate-3" viewBox="0 0 24 24">
+<path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2a1 1 0 011.02-.24 11.72 11.72 0 003.68.59 1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1 11.72 11.72 0 00.59 3.68 1 1 0 01-.24 1.02l-2.23 2.09z"></path>
+</svg>
+</button><button aria-label="Chat on WhatsApp" class="h-12 w-12 rounded-full border border-emerald-100/80 bg-emerald-50 text-emerald-700 flex items-center justify-center shadow-sm active:scale-95 transition-all hover:bg-emerald-100/70 shrink-0" type="button"><svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91A9.92 9.92 0 0 0 12.04 2zm0 18.15c-1.49 0-2.95-.4-4.22-1.16l-.3-.18-3.13.82.84-3.05-.2-.31a8.19 8.19 0 0 1-1.26-4.36c0-4.54 3.7-8.24 8.27-8.24 2.21 0 4.29.86 5.85 2.43a8.21 8.21 0 0 1 2.42 5.85c0 4.55-3.7 8.24-8.27 8.24zm4.53-6.18c-.25-.12-1.47-.72-1.7-.81-.23-.08-.39-.12-.56.12-.17.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.12-1.05-.39-2-1.23-.74-.66-1.24-1.48-1.39-1.73-.14-.25-.02-.38.11-.5.11-.11.25-.29.37-.43.12-.14.17-.25.25-.41.08-.17.04-.31-.02-.43s-.56-1.35-.77-1.85c-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.43.06-.66.31-.22.25-.86.84-.86 2.05s.88 2.38 1 2.54c.12.17 1.74 2.66 4.21 3.73.59.25 1.05.4 1.41.52.59.19 1.13.16 1.56.1.47-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.15-1.18-.06-.12-.22-.19-.47-.31z"></path></svg></button>
+<!-- View Owner Contact Button (Primary Capsule Action) -->
+<button class="flex-1 h-12 flex items-center justify-center px-4 rounded-full bg-brand-500 hover:bg-brand-600 text-white font-semibold text-[15px] tracking-tight shadow-md shadow-brand-500/25 active:scale-95 transition-all" type="button"><span class="">View owner contact</span></button>
+</div>
+<!-- Home Indicator Bar for iOS -->
+<div class="w-32 h-1 bg-slate-300 rounded-full mx-auto mt-3 pointer-events-none"></div>
+</nav>
+<!-- END: StickyBottomBar -->
+</div>
+<!-- END: MobileDeviceFrame -->
+
+
+</body></html>

@@ -1,0 +1,233 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport">
+<title>Sheltr - 9. Map View</title>
+<!-- Tailwind CSS CDN -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Google Fonts & Material Symbols -->
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<style>
+    body {
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      -webkit-font-smoothing: antialiased;
+      user-select: none;
+    }
+  </style>
+</head>
+<body class="bg-slate-100 flex items-center justify-center min-h-screen p-0 m-0">
+<!-- Mobile Screen Container (Standard iPhone 390px, perfectly centered without sliver clipping) -->
+<div class="relative w-full max-w-[390px] h-[844px] min-h-[844px] bg-[#f6f7f9] overflow-hidden flex flex-col justify-between shadow-2xl sm:rounded-[44px] sm:border-[6px] sm:border-slate-900 mx-auto">
+<!-- BEGIN: Full Map Vector Cartography Canvas -->
+<div class="absolute inset-0 w-full h-full z-0 overflow-hidden pointer-events-none">
+<svg class="w-full h-full object-cover" fill="none" preserveAspectRatio="xMidYMid slice" viewBox="0 0 390 844" xmlns="http://www.w3.org/2000/svg">
+<!-- Base Landmass -->
+<rect fill="#f4f5f0" height="844" width="390"></rect>
+<!-- Urban Land Parcels / Blocks -->
+<path d="M-10 -10 L160 -10 L145 170 L-10 140 Z" fill="#faf9f5" opacity="0.95"></path>
+<path d="M180 -10 L410 -10 L410 190 L175 160 Z" fill="#fbfaf6" opacity="0.9"></path>
+<path d="M-10 170 L140 195 L125 390 L-10 365 Z" fill="#ffffff" opacity="0.8"></path>
+<path d="M165 190 L380 165 L410 350 L175 375 Z" fill="#f9f8f4" opacity="0.85"></path>
+<path d="M-10 410 L150 440 L120 670 L-10 645 Z" fill="#fcfbf8" opacity="0.7"></path>
+<path d="M175 425 L410 380 L410 700 L185 680 Z" fill="#f8f7f2" opacity="0.8"></path>
+<path d="M-10 690 L140 710 L120 860 L-10 860 Z" fill="#fbfaf6" opacity="0.7"></path>
+<path d="M175 720 L410 690 L410 860 L175 860 Z" fill="#faf9f5" opacity="0.8"></path>
+<!-- Green Park Polygons -->
+<!-- Sector 2 Park (West-Center) -->
+<path d="M25 210 C58 195 90 220 95 260 C100 295 65 315 35 300 C15 285 12 235 25 210 Z" fill="#d8edd6" stroke="#c0dfbd" stroke-width="1.5"></path>
+<!-- HSR Woods (North-East) -->
+<path d="M230 70 Q290 50 340 80 T385 160 Q320 180 260 150 T230 70 Z" fill="#d9eed8" stroke="#c2e1c0" stroke-width="1.5"></path>
+<!-- Freedom Park (South-East) -->
+<path d="M235 480 C285 460 360 480 375 530 C390 580 330 620 270 600 C230 580 205 500 235 480 Z" fill="#d8edd6" stroke="#c0dfbd" stroke-width="1.5"></path>
+<!-- Agara Lake Water Body -->
+<path d="M310 235 C335 225 385 245 405 275 C410 315 395 365 365 385 C335 405 305 375 295 335 C285 295 290 245 310 235 Z" fill="#d3e8f8" stroke="#bcdcf3" stroke-width="1.5"></path>
+<path d="M295 335 Q275 375 265 425 T245 505" fill="none" opacity="0.8" stroke="#d3e8f8" stroke-linecap="round" stroke-width="6"></path>
+<!-- Minor Street Grid Network -->
+<g stroke="#ffffff" stroke-linecap="round" stroke-linejoin="round">
+<!-- Horizontal Avenues -->
+<path d="M-20 75 L410 40" stroke-width="5"></path>
+<path d="M-20 160 L410 135" stroke-width="6"></path>
+<path d="M-20 340 L410 315" stroke-width="5.5"></path>
+<path d="M-20 440 L410 410" stroke-width="6"></path>
+<path d="M-20 575 L410 545" stroke-width="5.5"></path>
+<path d="M-20 705 L410 675" stroke-width="5.5"></path>
+<!-- Vertical Cross Streets -->
+<path d="M55 -20 L40 860" stroke-width="5"></path>
+<path d="M125 -20 L115 860" stroke-width="5"></path>
+<path d="M225 -20 L215 860" stroke-width="6"></path>
+<path d="M305 -20 L295 860" stroke-width="5"></path>
+<path d="M365 -20 L350 860" stroke-width="4.5"></path>
+<!-- Connecting Diagonal Lanes -->
+<path d="M50 75 Q95 115 125 160" fill="none" stroke-width="4"></path>
+<path d="M125 160 Q165 220 215 210" fill="none" stroke-width="4"></path>
+<path d="M215 210 Q265 190 295 220" fill="none" stroke-width="4"></path>
+<path d="M40 340 Q90 390 120 440" fill="none" stroke-width="4"></path>
+<path d="M120 440 Q165 480 205 435" fill="none" stroke-width="4"></path>
+<path d="M205 435 Q265 475 295 440" fill="none" stroke-width="4"></path>
+<path d="M50 575 Q105 615 115 705" fill="none" stroke-width="4"></path>
+<path d="M205 555 Q255 625 295 695" fill="none" stroke-width="4"></path>
+</g>
+<!-- Primary Arterials & Highways -->
+<!-- Arterial Shadow -->
+<path d="M-20 230 C95 235 155 260 215 255 C275 250 335 210 420 200" fill="none" stroke="#e6dfd1" stroke-linecap="round" stroke-width="12"></path>
+<path d="M150 -20 C155 180 165 300 155 460 C145 600 160 720 170 860" fill="none" stroke="#e6dfd1" stroke-linecap="round" stroke-width="14"></path>
+<path d="M-20 495 C115 485 205 525 285 515 C335 505 375 475 420 465" fill="none" stroke="#e6dfd1" stroke-linecap="round" stroke-width="11"></path>
+<!-- Arterial Fill (Signature warm navigation tones) -->
+<path d="M-20 230 C95 235 155 260 215 255 C275 250 335 210 420 200" fill="none" stroke="#ffeec4" stroke-linecap="round" stroke-width="8.5"></path>
+<path d="M150 -20 C155 180 165 300 155 460 C145 600 160 720 170 860" fill="none" stroke="#ffdf9e" stroke-linecap="round" stroke-width="10.5"></path>
+<path d="M-20 495 C115 485 205 525 285 515 C335 505 375 475 420 465" fill="none" stroke="#ffeec4" stroke-linecap="round" stroke-width="8"></path>
+<!-- Map Cartographic Typography & Labels -->
+<g font-family="'Plus Jakarta Sans', sans-serif">
+<!-- Water Label -->
+<text fill="#5c96c2" font-size="9.5" font-weight="700" letter-spacing="0.04em" x="345" y="315">Agara Lake</text>
+<!-- Park Labels -->
+<text fill="#4d7c4d" font-size="9" font-weight="700" x="30" y="255">Sector 2 Park</text>
+<text fill="#5d8b5d" font-size="9" font-weight="600" x="265" y="115">HSR Woods</text>
+<text fill="#5d8b5d" font-size="9" font-weight="600" x="260" y="550">Freedom Park</text>
+<!-- Main Roads -->
+<text fill="#937a54" font-size="8.5" font-weight="700" letter-spacing="0.08em" transform="rotate(87 162 190)" x="162" y="190">27TH MAIN ROAD</text>
+<text fill="#937a54" font-size="8.5" font-weight="700" letter-spacing="0.08em" transform="rotate(86 154 590)" x="154" y="590">27TH MAIN ROAD</text>
+<text fill="#a49375" font-size="8" font-weight="600" x="18" y="222">19th Cross Rd</text>
+<text fill="#937a54" font-size="8.5" font-weight="700" letter-spacing="0.04em" x="228" y="246">17TH MAIN RD</text>
+<text fill="#937a54" font-size="8.5" font-weight="700" letter-spacing="0.06em" x="18" y="488">OUTER RING ROAD</text>
+<!-- Sector Badges -->
+<text fill="#b09f83" font-size="9.5" font-weight="800" letter-spacing="0.1em" opacity="0.8" x="70" y="145">SECTOR 1</text>
+<text fill="#b09f83" font-size="9.5" font-weight="800" letter-spacing="0.1em" opacity="0.8" x="75" y="420">SECTOR 2</text>
+<text fill="#b09f83" font-size="9.5" font-weight="800" letter-spacing="0.1em" opacity="0.8" x="235" y="405">SECTOR 3</text>
+</g>
+</svg>
+</div>
+<!-- END: Full Map Vector Cartography Canvas -->
+<!-- BEGIN: Floating Top Bar Section -->
+<header class="relative z-30 pt-3 px-4 pb-2">
+<!-- iOS Status Bar -->
+<div class="flex justify-between items-center px-2 pt-1 pb-2 text-slate-800 text-xs font-semibold tracking-tight">
+<span class="text-[14px] font-bold tracking-tight text-slate-900">9:41</span>
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-slate-800">signal_cellular_alt</span>
+<span class="material-symbols-outlined text-[16px] text-slate-800">wifi</span>
+<div class="w-5 h-2.5 border border-slate-800 rounded-sm p-[1px] flex items-center ml-0.5">
+<div class="h-full w-3 bg-slate-900 rounded-2xs"></div>
+</div>
+</div>
+</div>
+<!-- Floating Frosted Glass Search Bar Container -->
+<div class="mt-0.5 flex items-center bg-white/90 backdrop-blur-md border border-white/80 rounded-2xl shadow-sm px-3 py-2.5 gap-2.5">
+<!-- Back Button -->
+<button aria-label="Go back" class="w-8 h-8 rounded-full flex items-center justify-center text-slate-700 hover:text-slate-900 hover:bg-slate-100 transition-colors flex-shrink-0">
+<span class="material-symbols-outlined text-[20px]">arrow_back</span>
+</button>
+<!-- Search Icon & Input -->
+<div class="flex-1 flex items-center gap-2 min-w-0">
+<span class="material-symbols-outlined text-[20px] text-[#ef7560] flex-shrink-0">location_on</span>
+<input class="w-full bg-transparent border-none p-0 text-slate-900 text-[14px] font-semibold tracking-tight focus:ring-0 focus:outline-none cursor-pointer truncate" readonly="" type="text" value="HSR Layout, Bangalore">
+</div>
+<!-- Filter Button -->
+<button aria-label="Filter search" class="w-8 h-8 rounded-xl bg-slate-100/90 flex items-center justify-center text-slate-700 hover:text-slate-900 transition-colors flex-shrink-0 shadow-2xs">
+<span class="material-symbols-outlined text-[18px]">tune</span>
+</button>
+</div>
+</header>
+<!-- END: Floating Top Bar Section -->
+<!-- BEGIN: Interactive Map Pins Layer -->
+<div class="absolute inset-0 pointer-events-none z-10">
+<!-- Marker 1: ₹18,000 (North-West) -->
+<div class="absolute top-[215px] left-[45px] pointer-events-auto flex items-center group cursor-pointer transition-transform hover:scale-105 active:scale-95">
+<div class="bg-white/95 backdrop-blur-md px-3 py-1.5 rounded-full shadow-[0_4px_16px_rgba(0,0,0,0.1)] border border-white/90 flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-[#ef7560]"></span>
+<span class="text-[12px] font-bold text-slate-800 tracking-tight whitespace-nowrap">₹18,000</span>
+</div>
+</div>
+<!-- Marker 2: ₹22,000 (North-East) -->
+<div class="absolute top-[235px] right-[40px] pointer-events-auto flex items-center group cursor-pointer transition-transform hover:scale-105 active:scale-95">
+<div class="bg-white/95 backdrop-blur-md px-3 py-1.5 rounded-full shadow-[0_4px_16px_rgba(0,0,0,0.1)] border border-white/90 flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-[#ef7560]"></span>
+<span class="text-[12px] font-bold text-slate-800 tracking-tight whitespace-nowrap">₹22,000</span>
+</div>
+</div>
+<!-- Marker 3: ₹25,000 (West-Mid) -->
+<div class="absolute top-[340px] left-[35px] pointer-events-auto group cursor-pointer transition-transform hover:scale-105 active:scale-95">
+<div class="bg-white/95 backdrop-blur-md px-3 py-1.5 rounded-full shadow-[0_4px_16px_rgba(0,0,0,0.1)] border border-white/90 flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-[#ef7560]"></span>
+<span class="text-[12px] font-bold text-slate-800 tracking-tight whitespace-nowrap">₹25,000</span>
+</div>
+</div>
+<!-- Active Selected Pin: ₹32,000 Speech Bubble with Coral Pulse (Center) -->
+<div class="absolute top-[270px] left-[155px] pointer-events-auto flex flex-col items-center cursor-pointer z-20 transition-transform active:scale-95">
+<!-- Coral pulse animation ring behind pin -->
+<div class="absolute -top-1 -left-1 w-[96px] h-[38px] rounded-full bg-[#ef7560]/25 animate-ping pointer-events-none"></div>
+<!-- Speech Bubble Badge -->
+<div class="relative bg-[#ef7560] text-white font-extrabold px-3.5 py-1.5 rounded-full shadow-lg shadow-[#ef7560]/40 text-[12.5px] border-2 border-white ring-4 ring-[#ef7560]/20 flex items-center gap-1.5 z-10 whitespace-nowrap">
+<span class="w-2 h-2 rounded-full bg-white"></span>
+<span class="tracking-tight">₹32,000</span>
+</div>
+<!-- Downward triangle pointer -->
+<div class="w-2.5 h-2.5 bg-[#ef7560] rotate-45 -mt-1.5 rounded-[1px] border-r-2 border-b-2 border-white z-10"></div>
+</div>
+<!-- User Current GPS Location (iOS blue pulse) -->
+<div class="absolute top-[410px] left-[190px] flex items-center justify-center pointer-events-none">
+<div class="absolute w-8 h-8 bg-blue-500/25 rounded-full animate-ping"></div>
+<div class="relative w-4 h-4 bg-blue-500 border-2 border-white rounded-full shadow-md ring-4 ring-blue-500/20"></div>
+</div>
+<!-- Secondary amenity badge -->
+<div class="absolute top-[375px] right-[65px] pointer-events-auto cursor-pointer transition-transform hover:scale-110">
+<div class="w-8 h-8 rounded-full bg-white/95 backdrop-blur-sm border border-white shadow-md flex items-center justify-center text-[#ef7560]">
+<span class="material-symbols-outlined text-[17px]">apartment</span>
+</div>
+</div>
+</div>
+<!-- END: Interactive Map Pins Layer -->
+<!-- BEGIN: Bottom Controls & Property Preview Card -->
+<footer class="relative z-30 px-4 pb-4 flex flex-col items-center gap-2.5">
+<!-- Selected Property Preview Card -->
+<div class="w-full bg-white/95 backdrop-blur-xl border border-white/90 rounded-2xl p-3 shadow-lg flex items-center gap-3 cursor-pointer transition-transform active:scale-[0.99]" data-purpose="property-preview-card">
+<!-- Thumbnail -->
+<div class="w-22 h-22 w-[88px] h-[88px] rounded-xl overflow-hidden bg-slate-100 flex-shrink-0 relative shadow-xs">
+<img alt="2 BHK Apartment" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDJLJ9IJsMvZbvuuHAlRNWscXxW4RDHjeylmFWBVJAndJDJYMlejhfDtwQjwCDo3Dbw4AvekvqjHA9RmNhU919eqN4rx8ZTDgfBxmNeHJXT1rBxl4ZeIcE4lnegxm7wK0CWglKvN9qIuMcVIZN30SOyKz9WAdtbxxOtQx4eDw8tR9pUt16LOG3XyBuYkdJ1QMSdYJDhwKC0wFBgjnxzBGml8t8wiyhMv_zQdy5pwkngsU85mya30yzt">
+<!-- Star Badge -->
+<div class="absolute top-1.5 left-1.5 bg-black/60 backdrop-blur-sm rounded-full px-1.5 py-0.5 flex items-center gap-0.5">
+<span class="material-symbols-outlined text-[10px] text-amber-300">star</span>
+<span class="text-[10px] font-bold text-white leading-none">4.9</span>
+</div>
+</div>
+<!-- Property Details -->
+<div class="flex-1 min-w-0 pr-0.5">
+<div class="flex items-center gap-1.5 mb-1">
+<span class="text-[10px] font-bold text-emerald-700 bg-emerald-50 px-1.5 py-0.5 rounded border border-emerald-200/60 leading-none">Verified</span>
+<span class="text-[11px] text-slate-500 font-medium truncate">HSR Layout, Sector 2</span>
+</div>
+<h3 class="text-[15px] font-bold text-slate-900 truncate leading-tight tracking-tight">2 BHK Apartment</h3>
+<p class="text-[11.5px] text-slate-500 font-medium truncate mt-0.5">
+            2 Bed · 2 Bath · 1,100 sq ft
+          </p>
+<div class="mt-1 flex items-baseline gap-1">
+<span class="text-[15px] font-extrabold text-[#ef7560] tracking-tight">₹32,000</span>
+<span class="text-[11px] text-slate-500 font-medium">/ month</span>
+</div>
+</div>
+<!-- Chevron Action Button -->
+<div class="w-7 h-7 rounded-full bg-slate-100/90 flex items-center justify-center text-slate-400 flex-shrink-0">
+<span class="material-symbols-outlined text-[18px]">chevron_right</span>
+</div>
+</div>
+<!-- Floating Bottom Dock: Map/List View Toggle -->
+<div class="bg-white/95 backdrop-blur-2xl border border-white/90 shadow-[0_8px_30px_rgba(0,0,0,0.12)] p-1 rounded-full flex items-center gap-1" data-purpose="view-toggle">
+<!-- Map Option (Active with Coral Accent indicator) -->
+<button class="flex items-center gap-1.5 px-4 py-1.5 rounded-full bg-[#ef7560] text-white text-[12px] font-bold shadow-sm transition-all">
+<span class="material-symbols-outlined text-[16px]">map</span>
+<span>Map</span>
+</button>
+<!-- List Option -->
+<button class="flex items-center gap-1.5 px-4 py-1.5 rounded-full text-slate-600 hover:text-slate-900 text-[12px] font-semibold transition-colors">
+<span class="material-symbols-outlined text-[16px] text-slate-400">format_list_bulleted</span>
+<span>List</span>
+</button>
+</div>
+<!-- iOS Home Bar Indicator -->
+<div class="w-32 h-1 bg-slate-300 rounded-full mt-0.5"></div>
+</footer>
+<!-- END: Bottom Controls & Property Preview Card -->
+</div>
+</body></html>

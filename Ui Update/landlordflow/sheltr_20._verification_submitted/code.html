@@ -1,0 +1,225 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Sheltr - Verification Submitted</title>
+<!-- Tailwind CSS CDN with forms and container queries -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Google Font: Plus Jakarta Sans -->
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+<!-- Tailwind Configuration -->
+<script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+          },
+          colors: {
+            sheltr: {
+              coral: '#F0674C',
+              coralLight: '#FEF1ED',
+              coralHover: '#E0553A',
+              coralBorder: '#FBCBC3',
+              dark: '#1D2129',
+              muted: '#717886',
+              border: '#E8ECF2',
+              green: '#22C55E',
+              greenLight: '#EBF9F1',
+            }
+          },
+          boxShadow: {
+            'card-soft': '0 4px 20px -2px rgba(240, 103, 76, 0.08), 0 2px 6px -1px rgba(0, 0, 0, 0.03)',
+            'btn-coral': '0 8px 24px -4px rgba(240, 103, 76, 0.35)',
+          }
+        }
+      }
+    }
+  </script>
+<!-- BEGIN: Custom Page Styling -->
+<style data-purpose="base-layout">
+    body {
+      background-color: #F3F4F6;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      -webkit-font-smoothing: antialiased;
+    }
+    
+    /* Device frame constraints */
+    .mobile-frame {
+      width: 100%;
+      max-width: 390px;
+      height: 844px;
+      max-height: 100vh;
+      background-color: #FFFFFF;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+
+    /* iOS indicator styling */
+    .ios-indicator {
+      width: 134px;
+      height: 5px;
+      background-color: #111827;
+      border-radius: 9999px;
+      margin: 0 auto;
+    }
+  </style>
+<!-- END: Custom Page Styling -->
+</head>
+<body>
+<!-- BEGIN: MobileContainer -->
+<div class="mobile-frame shadow-2xl sm:rounded-[44px] border border-gray-100/60" data-purpose="ios-mobile-screen">
+<!-- BEGIN: StatusBar -->
+<header class="pt-3 px-7 flex justify-between items-center z-20 shrink-0" data-purpose="status-bar">
+<!-- Time -->
+<span class="text-[15px] font-semibold tracking-tight text-sheltr-dark">9:41</span>
+<!-- iOS Status Icons -->
+<div class="flex items-center space-x-2 text-sheltr-dark">
+<!-- Cellular Signal Icon -->
+<svg class="w-4 h-3.5" fill="currentColor" viewBox="0 0 17 12">
+<rect height="4" rx="0.8" width="3" x="0" y="8"></rect>
+<rect height="6.5" rx="0.8" width="3" x="4.5" y="5.5"></rect>
+<rect height="9" rx="0.8" width="3" x="9" y="3"></rect>
+<rect height="12" rx="0.8" width="3" x="13.5" y="0"></rect>
+</svg>
+<!-- Wi-Fi Icon -->
+<svg class="w-4 h-3.5" fill="currentColor" viewBox="0 0 16 12">
+<path clip-rule="evenodd" d="M8 2.5a10.96 10.96 0 0 1 6.5 2.15.75.75 0 0 1 .15 1.05l-6.17 7.72a.6.6 0 0 1-.96 0L1.35 5.7a.75.75 0 0 1 .15-1.05A10.96 10.96 0 0 1 8 2.5z" fill-rule="evenodd"></path>
+</svg>
+<!-- Battery Icon -->
+<div class="w-6 h-3 rounded-[4px] border-[1.5px] border-current p-0.5 flex items-center relative">
+<div class="h-full w-full bg-current rounded-[1px]"></div>
+<div class="w-0.5 h-1.5 bg-current absolute -right-1 rounded-r-sm"></div>
+</div>
+</div>
+</header>
+<!-- END: StatusBar -->
+<!-- BEGIN: NavigationBar -->
+<nav class="px-5 pt-3 pb-2 flex items-center justify-between shrink-0" data-purpose="top-navigation">
+<button aria-label="Back" class="w-10 h-10 -ml-2 rounded-full flex items-center justify-center text-sheltr-dark active:bg-gray-100 transition-colors" type="button">
+<svg class="w-5 h-5 text-sheltr-dark stroke-[2.5]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M15.75 19.5L8.25 12l7.5-7.5" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</button>
+<div class="w-10"></div>
+</nav>
+<!-- END: NavigationBar -->
+<!-- BEGIN: MainContent -->
+<main class="flex-1 flex flex-col justify-between px-6 pt-4 pb-6 overflow-y-auto" data-purpose="screen-content">
+<!-- Top and Center Section -->
+<section class="flex flex-col items-center flex-1 justify-center pt-2">
+<!-- BEGIN: GraphicIllustration -->
+<!-- Illustration matching screen 20: layered documents with coral timer badge -->
+<div class="relative w-44 h-40 flex items-center justify-center mb-7" data-purpose="illustration-card">
+<!-- Background Warm Radial Glow -->
+<div class="absolute inset-0 bg-orange-100/50 rounded-full blur-2xl transform scale-90 -z-10"></div>
+<!-- Back Document Card (tilted/layered) -->
+<div class="absolute w-24 h-32 bg-[#FDE7E1] rounded-2xl transform rotate-6 translate-x-2 border border-[#FAD2C7]/60"></div>
+<!-- Front Primary Document Card -->
+<div class="relative w-28 h-36 bg-[#FFF2EE] rounded-2xl border border-[#FBCBC3] shadow-card-soft p-4 flex flex-col justify-between">
+<!-- Document placeholder text lines -->
+<div class="space-y-2.5 pt-1">
+<div class="h-2 w-14 bg-[#F8BAAC] rounded-full"></div>
+<div class="h-2 w-20 bg-[#FCD7CE] rounded-full"></div>
+<div class="h-2 w-16 bg-[#FCD7CE] rounded-full"></div>
+<div class="h-2 w-10 bg-[#FDE2DB] rounded-full"></div>
+</div>
+<!-- Bottom decorative badge line -->
+<div class="h-1.5 w-8 bg-[#FCD7CE] rounded-full mb-1"></div>
+<!-- Warm Timer/Clock Badge on the right corner -->
+<div class="absolute -bottom-2 -right-3 w-11 h-11 bg-sheltr-coral rounded-full flex items-center justify-center shadow-md border-[3px] border-white">
+<!-- Minimal Clock Hands -->
+<svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewBox="0 0 24 24">
+<circle cx="12" cy="12" fill="none" r="9" stroke="none"></circle>
+<path d="M12 7v5l3 2"></path>
+</svg>
+</div>
+</div>
+</div>
+<!-- END: GraphicIllustration -->
+<!-- BEGIN: Headlines -->
+<div class="text-center px-2 mb-9" data-purpose="header-text">
+<h1 class="text-[26px] font-bold text-sheltr-dark tracking-tight leading-snug">
+            Verification submitted
+          </h1>
+<p class="text-[14px] text-sheltr-muted mt-2 leading-relaxed max-w-[280px] mx-auto font-normal">
+            We'll review your documents within 24–48 hours.
+          </p>
+</div>
+<!-- END: Headlines -->
+<!-- BEGIN: VerificationStepsTimeline -->
+<div class="w-full max-w-[310px] space-y-0" data-purpose="status-timeline">
+<!-- Step 1: Listing published (Completed) -->
+<div class="flex items-start group">
+<div class="flex flex-col items-center mr-4">
+<!-- Green Check Icon Circle -->
+<div class="w-6 h-6 rounded-full bg-sheltr-green flex items-center justify-center text-white shrink-0 shadow-sm">
+<svg class="w-3.5 h-3.5 stroke-[3]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M4.5 12.75l6 6 9-13.5" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</div>
+<!-- Vertical connecting dashed line -->
+<div class="w-[1.5px] h-8 border-l-[1.5px] border-dashed border-gray-300 my-1"></div>
+</div>
+<!-- Label -->
+<div class="pt-0.5">
+<span class="text-[14px] font-medium text-sheltr-dark leading-tight">Listing published</span>
+</div>
+</div>
+<!-- Step 2: Documents under review (Active / In Progress) -->
+<div class="flex items-start group">
+<div class="flex flex-col items-center mr-4">
+<!-- Coral Indicator Circle with inner dot -->
+<div class="w-6 h-6 rounded-full bg-sheltr-coral flex items-center justify-center text-white shrink-0 shadow-sm">
+<div class="w-2 h-2 rounded-full bg-white"></div>
+</div>
+<!-- Vertical connecting dashed line -->
+<div class="w-[1.5px] h-8 border-l-[1.5px] border-dashed border-gray-300 my-1"></div>
+</div>
+<!-- Label -->
+<div class="pt-0.5">
+<span class="text-[14px] font-medium text-sheltr-dark leading-tight">Documents under review</span>
+</div>
+</div>
+<!-- Step 3: Verified badge (Pending) -->
+<div class="flex items-start group">
+<div class="flex flex-col items-center mr-4">
+<!-- Gray Empty Circle -->
+<div class="w-6 h-6 rounded-full bg-gray-100 border-2 border-gray-300 flex items-center justify-center shrink-0">
+<div class="w-1.5 h-1.5 rounded-full bg-gray-300"></div>
+</div>
+</div>
+<!-- Label -->
+<div class="pt-0.5">
+<span class="text-[14px] font-normal text-sheltr-muted leading-tight">Verified badge</span>
+</div>
+</div>
+</div>
+<!-- END: VerificationStepsTimeline -->
+</section>
+<!-- BEGIN: BottomCTA -->
+<footer class="w-full pt-4 pb-2" data-purpose="bottom-action">
+<button class="w-full py-4 px-6 bg-sheltr-coral hover:bg-sheltr-coralHover active:scale-[0.99] text-white text-[16px] font-semibold rounded-2xl shadow-btn-coral transition-all duration-200 text-center flex items-center justify-center" type="button">
+          Go to My Listings
+        </button>
+</footer>
+<!-- END: BottomCTA -->
+</main>
+<!-- END: MainContent -->
+<!-- BEGIN: HomeIndicator -->
+<div class="pb-2 pt-1 w-full flex justify-center shrink-0" data-purpose="home-indicator">
+<div class="ios-indicator"></div>
+</div>
+<!-- END: HomeIndicator -->
+</div>
+<!-- END: MobileContainer -->
+</body></html>

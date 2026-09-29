@@ -1,0 +1,187 @@
+<!DOCTYPE html><html lang="en" style=""><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport">
+<title>Sheltr - Filters (Bottom Sheet)</title>
+<!-- Tailwind CSS CDN with forms and container plugins -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              DEFAULT: '#FF6B55',
+              dark: '#EA5843',
+              light: '#FFF2F0',
+              border: '#FFD9D4'
+            },
+            neutral: {
+              subtle: '#F7F8F9',
+              muted: '#717680',
+              dark: '#181D27'
+            }
+          }
+        }
+      }
+    }
+  </script>
+<!-- BEGIN: Custom Stylesheet -->
+<style data-purpose="base-styling">
+    /* iOS modal background simulation and custom range thumb styles */
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      -webkit-font-smoothing: antialiased;
+      -webkit-tap-highlight-color: transparent;
+      user-select: none;
+    }
+    /* Dual Range Slider track mock styling */
+    .slider-track {
+      background: linear-gradient(to right, #E5E7EB 0%, #E5E7EB 18%, #FF6B55 18%, #FF6B55 78%, #E5E7EB 78%, #E5E7EB 100%);
+    }
+    .thumb-shadow {
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+    }
+    .sheet-shadow {
+      box-shadow: 0 -8px 24px -4px rgba(0, 0, 0, 0.08);
+    }
+  </style>
+<!-- END: Custom Stylesheet -->
+</head>
+<body class="bg-neutral-800/60 flex justify-center items-end min-h-screen p-0 select-none overflow-hidden">
+<!-- BEGIN: BottomSheetContainer -->
+<!-- Container mimicking an iOS bottom sheet inside a mobile viewport -->
+<div class="w-full max-w-[420px] bg-white rounded-t-[32px] flex flex-col sheet-shadow overflow-hidden max-h-[85vh] shadow-2xl relative" data-purpose="bottom-sheet">
+<!-- BEGIN: SheetHeaderSection -->
+<header class="pt-3 px-6 pb-4 flex flex-col items-center">
+<!-- Modal Drag Handle Indicator -->
+<div aria-hidden="true" class="w-10 h-1 bg-gray-300 rounded-full mb-3"></div>
+<!-- Title and Close Action Button -->
+<div class="w-full flex items-center justify-between">
+<h1 class="text-[22px] font-bold text-gray-900 tracking-tight">Filters</h1>
+<button aria-label="Close filters" class="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center text-gray-500 hover:text-gray-800 transition-colors" type="button">
+<svg class="w-4 h-4 stroke-[2.2]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M6 18L18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</button>
+</div>
+</header>
+<!-- END: SheetHeaderSection -->
+<!-- BEGIN: SheetScrollableContent -->
+<!-- Content container with custom clean vertical spacing -->
+<main class="flex-1 overflow-y-auto px-6 py-2 space-y-6">
+<!-- BEGIN: PropertyTypeSection -->
+<section class="space-y-3" data-purpose="property-type-filter">
+<h2 class="text-sm font-semibold text-gray-900">Property type</h2>
+<!-- Horizontal Scrollable Row for Property Types -->
+<div class="grid grid-cols-3 gap-4 py-1">
+  <!-- Option: All (Selected) -->
+  <button class="flex flex-col items-center gap-1.5 focus:outline-none group" type="button">
+    <div class="w-14 h-14 rounded-full bg-brand flex items-center justify-center text-white shadow-sm transition-transform active:scale-95">
+      <svg class="w-6 h-6 stroke-[1.8]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" stroke-linecap="round" stroke-linejoin="round"></path>
+      </svg>
+    </div>
+    <span class="text-xs font-semibold text-brand text-center">All</span>
+  </button>
+  <!-- Option: Apt (Apartment) -->
+  <button class="flex flex-col items-center gap-1.5 focus:outline-none group" type="button">
+    <div class="w-14 h-14 rounded-full border border-gray-200 bg-white flex items-center justify-center text-gray-500 hover:border-gray-300 transition active:scale-95">
+      <svg class="w-6 h-6 stroke-[1.7]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" stroke-linecap="round" stroke-linejoin="round"></path>
+      </svg>
+    </div>
+    <span class="text-xs font-medium text-gray-600 text-center">Apt</span>
+  </button>
+  <!-- Option: House -->
+  <button class="flex flex-col items-center gap-1.5 focus:outline-none group" type="button">
+    <div class="w-14 h-14 rounded-full border border-gray-200 bg-white flex items-center justify-center text-gray-500 hover:border-gray-300 transition active:scale-95">
+      <svg class="w-6 h-6 stroke-[1.7]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path d="M3 9.75L12 3l9 6.75M4.5 8.25v11.25a1.5 1.5 0 001.5 1.5h12a1.5 1.5 0 001.5-1.5V8.25m-9 12.75v-6a1.5 1.5 0 011.5-1.5h3a1.5 1.5 0 011.5 1.5v6" stroke-linecap="round" stroke-linejoin="round"></path>
+      </svg>
+    </div>
+    <span class="text-xs font-medium text-gray-600 text-center">House</span>
+  </button>
+</div>
+</section>
+<!-- END: PropertyTypeSection -->
+<!-- BEGIN: BudgetSliderSection -->
+<section class="space-y-4 pt-1" data-purpose="budget-slider">
+<h2 class="text-sm font-semibold text-gray-900">Budget (₹ / month)</h2>
+<!-- Active Selected Values Label Bubble -->
+<div class="flex items-center justify-between text-xs font-bold text-gray-700 px-8">
+<span class="">₹10,000</span>
+<span class="">₹50,000</span>
+</div>
+<!-- Slider Bar with interactive points representation -->
+<div class="relative py-2 px-1">
+<!-- Background and highlighted range track -->
+<div class="slider-track w-full h-1.5 rounded-full relative"></div>
+<!-- Slider Thumbs -->
+<!-- Left Thumb (~18%) -->
+<div aria-label="Min budget thumb" class="absolute left-[18%] -top-1 -ml-3 w-5 h-5 bg-brand rounded-full border-2 border-white thumb-shadow cursor-pointer transition-transform active:scale-110"></div>
+<!-- Right Thumb (~78%) -->
+<div aria-label="Max budget thumb" class="absolute left-[78%] -top-1 -ml-3 w-5 h-5 bg-brand rounded-full border-2 border-white thumb-shadow cursor-pointer transition-transform active:scale-110"></div>
+</div>
+<!-- Range Extremes Range Guides -->
+<div class="flex items-center justify-between text-[11px] font-medium text-gray-400">
+<span class="">₹5,000</span>
+<span class="">₹1,00,000+</span>
+</div>
+</section>
+<!-- END: BudgetSliderSection -->
+<!-- BEGIN: BedroomsFilterSection -->
+<section class="space-y-3 pt-1" data-purpose="bedrooms-filter">
+<h2 class="text-sm font-semibold text-gray-900">Bedrooms</h2>
+<!-- Horizontal segmented pills -->
+<div class="flex items-center gap-2 overflow-x-auto no-scrollbar py-0.5"><button class="flex-1 py-2 px-2.5 rounded-full text-xs font-medium bg-brand text-white border border-brand transition active:opacity-90 text-center whitespace-nowrap" type="button">Any</button><button class="flex-1 py-2 px-2.5 rounded-full text-xs font-medium text-gray-600 border border-gray-200 bg-white hover:border-gray-300 transition active:bg-gray-50 text-center whitespace-nowrap" type="button">1 BHK</button><button class="flex-1 py-2 px-2.5 rounded-full text-xs font-medium text-gray-600 border border-gray-200 bg-white hover:border-gray-300 transition active:bg-gray-50 text-center whitespace-nowrap" type="button">2 BHK</button><button class="flex-1 py-2 px-2.5 rounded-full text-xs font-medium text-gray-600 border border-gray-200 bg-white hover:border-gray-300 transition active:bg-gray-50 text-center whitespace-nowrap" type="button">3 BHK</button><button class="flex-1 py-2 px-2.5 rounded-full text-xs font-medium text-gray-600 border border-gray-200 bg-white hover:border-gray-300 transition active:bg-gray-50 text-center whitespace-nowrap" type="button">1 RK</button></div>
+</section>
+<!-- END: BedroomsFilterSection -->
+<!-- BEGIN: FurnishingFilterSection -->
+<section class="space-y-3 pt-1" data-purpose="furnishing-filter">
+<h2 class="text-sm font-semibold text-gray-900">Furnishing</h2>
+<!-- Horizontal segmented pills -->
+<div class="flex items-center gap-2 overflow-x-auto no-scrollbar py-0.5">
+<!-- Pill: Any (Selected) -->
+<button class="px-4 py-2 rounded-full text-xs font-medium bg-brand text-white border border-brand transition active:opacity-90" type="button">
+            Any
+          </button>
+<!-- Pill: Furnished -->
+<button class="px-4 py-2 rounded-full text-xs font-medium text-gray-600 border border-gray-200 bg-white hover:border-gray-300 transition active:bg-gray-50" type="button">
+            Furnished
+          </button>
+<!-- Pill: Semi -->
+<button class="px-4 py-2 rounded-full text-xs font-medium text-gray-600 border border-gray-200 bg-white hover:border-gray-300 transition active:bg-gray-50" type="button">
+            Semi
+          </button>
+<!-- Pill: Unfurnished -->
+<button class="px-4 py-2 rounded-full text-xs font-medium text-gray-600 border border-gray-200 bg-white hover:border-gray-300 transition active:bg-gray-50" type="button">
+            Unfurnished
+          </button>
+</div>
+</section>
+<!-- END: FurnishingFilterSection -->
+</main>
+<!-- END: SheetScrollableContent -->
+<!-- BEGIN: BottomStickyActions -->
+<footer class="p-6 pt-4 border-t border-gray-100 flex items-center gap-4 bg-white" data-purpose="bottom-actions">
+<!-- Reset Filter Action -->
+<button class="w-1/3 py-3 px-4 rounded-xl text-sm font-semibold text-gray-700 bg-gray-50 hover:bg-gray-100 transition-colors text-center active:scale-[0.98]" type="button">
+        Reset
+      </button>
+<!-- Primary Confirmation Button with count -->
+<button class="w-2/3 py-3 px-4 rounded-xl text-sm font-semibold text-white bg-brand hover:bg-brand-dark transition-all text-center shadow-md shadow-brand/20 active:scale-[0.98]" type="button">
+        Show 320 homes
+      </button>
+</footer>
+<!-- END: BottomStickyActions -->
+<!-- iOS Home Indicator Spacing -->
+<div class="h-2 w-full flex justify-center pb-2">
+<div class="w-32 h-1 bg-gray-300 rounded-full"></div>
+</div>
+</div>
+<!-- END: BottomSheetContainer -->
+
+
+
+
+</body></html>

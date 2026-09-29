@@ -1,0 +1,361 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport">
+<title>Sheltr - Search Results</title>
+<!-- Tailwind CSS CDN with forms and container-queries -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Configuration for custom brand colors -->
+<script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              coral: '#EF7560',
+              coralHover: '#e0634e',
+              coralLight: '#FFF5F3',
+            },
+            verified: {
+              badge: '#10B981',
+              bg: '#EAF8F1',
+            }
+          },
+          fontFamily: {
+            sans: ['-apple-system', 'BlinkMacSystemFont', '"SF Pro Display"', '"SF Pro Text"', 'Roboto', 'sans-serif'],
+          },
+          boxShadow: {
+            'soft': '0 4px 20px -2px rgba(0, 0, 0, 0.06)',
+            'floating': '0 8px 30px rgba(0, 0, 0, 0.12)',
+          }
+        }
+      }
+    }
+  </script>
+<!-- Custom styles for iOS appearance simulation and scrollbar suppression -->
+<style data-purpose="base-styling">
+    body {
+      -webkit-tap-highlight-color: transparent;
+      user-select: none;
+      background-color: #F8F9FA;
+    }
+    .hide-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .hide-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+  </style>
+</head>
+<body class="bg-gray-100 flex justify-center items-center min-h-screen p-0 sm:p-4">
+<!-- BEGIN: PhoneShellContainer -->
+<!-- Outer smartphone container matching iOS dimensions -->
+<div class="w-full max-w-[393px] h-[852px] bg-white sm:rounded-[44px] shadow-2xl relative flex flex-col overflow-hidden border border-gray-100" data-purpose="ios-frame">
+<!-- BEGIN: StatusBar -->
+<!-- Top iOS Status Bar (9:41, Cellular, Wifi, Battery) -->
+<header class="w-full pt-3 px-7 flex justify-between items-center text-black shrink-0 select-none z-30 bg-white" data-purpose="status-bar">
+<span class="text-[15px] font-semibold tracking-tight">9:41</span>
+<!-- Dynamic Island / Sensor Notch Placeholder for modern iOS realism -->
+<div class="w-24 h-4 bg-black rounded-full hidden sm:block mx-auto -mt-1"></div>
+<div class="flex items-center space-x-2 text-black">
+<!-- Cellular Signal -->
+<svg class="w-4 h-3.5 fill-current" viewBox="0 0 17 12">
+<rect height="4" rx="0.5" width="2.5" x="0" y="8"></rect>
+<rect height="6" rx="0.5" width="2.5" x="4" y="6"></rect>
+<rect height="9" rx="0.5" width="2.5" x="8" y="3"></rect>
+<rect height="12" rx="0.5" width="2.5" x="12" y="0"></rect>
+</svg>
+<!-- Wi-Fi Icon -->
+<svg class="w-4 h-3.5 fill-current" viewBox="0 0 16 12">
+<path d="M8 2.8c2.8 0 5.4 1.1 7.3 3l-1.4 1.4C12.3 5.6 10.3 4.8 8 4.8s-4.3.8-5.9 2.4L0.7 5.8C2.6 3.9 5.2 2.8 8 2.8zm0 4c1.8 0 3.4.7 4.7 1.9l-1.4 1.4c-.9-.8-2-1.3-3.3-1.3s-2.4.5-3.3 1.3L3.3 8.7C4.6 7.5 6.2 6.8 8 6.8zm0 4c.8 0 1.5.3 2 .9L8 13.7 6 11.7c.5-.6 1.2-.9 2-.9z"></path>
+</svg>
+<!-- Battery Icon -->
+<div class="flex items-center">
+<div class="w-5 h-2.5 border border-black rounded-[3px] p-[1px] flex items-center">
+<div class="w-full h-full bg-black rounded-[1px]"></div>
+</div>
+<div class="w-0.5 h-1 bg-black rounded-r-[1px] ml-[0.5px]"></div>
+</div>
+</div>
+</header>
+<!-- END: StatusBar -->
+<!-- BEGIN: SearchHeader -->
+<!-- Top Search Input and Navigation -->
+<section class="px-4 pt-2.5 pb-2 bg-white shrink-0" data-purpose="search-header">
+<div class="flex items-center gap-2.5">
+<!-- Back Arrow Button -->
+<button aria-label="Go back" class="p-1.5 -ml-1 text-gray-700 hover:text-black transition-colors rounded-full active:bg-gray-100" type="button">
+<svg class="w-5 h-5 stroke-[2.2]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M15 19l-7-7 7-7" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</button>
+<!-- Search Bar Input Box -->
+<div class="flex-1 flex items-center bg-gray-50 border border-gray-200/80 rounded-full px-3.5 py-2 transition-all focus-within:border-gray-400 focus-within:bg-white shadow-sm">
+<svg class="w-4 h-4 text-gray-400 mr-2 shrink-0 stroke-[2]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M21 21l-4.35-4.35M17 11a6 6 0 11-12 0 6 6 0 0112 0z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<input class="w-full bg-transparent text-sm font-medium text-gray-800 focus:outline-none p-0 border-none cursor-pointer tracking-tight" readonly="" type="text" value="HSR Layout, Bangalore">
+<button aria-label="Clear search" class="p-0.5 text-gray-400 hover:text-gray-600 transition-colors" type="button">
+<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M6 18L18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</button>
+</div>
+</div>
+</section>
+<!-- END: SearchHeader -->
+<!-- BEGIN: QuickFilters -->
+<!-- Horizontal scrollable filter pills -->
+<section class="px-4 py-2 border-b border-gray-100 shrink-0 bg-white" data-purpose="filter-pills">
+<div class="flex items-center gap-2 overflow-x-auto hide-scrollbar py-0.5">
+<!-- Filter: BHK Selection -->
+<button class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full border border-gray-200 bg-white text-xs font-medium text-gray-700 hover:bg-gray-50 active:scale-95 transition-all shrink-0" type="button">
+<span>2 BHK</span>
+<svg class="w-3 h-3 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M19 9l-7 7-7-7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"></path>
+</svg>
+</button>
+<!-- Filter: Budget Range -->
+<button class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full border border-gray-200 bg-white text-xs font-medium text-gray-700 hover:bg-gray-50 active:scale-95 transition-all shrink-0" type="button">
+<span>₹10K - 50K</span>
+<svg class="w-3 h-3 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M19 9l-7 7-7-7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"></path>
+</svg>
+</button>
+<!-- Filter: Furnishing -->
+<button class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full border border-gray-200 bg-white text-xs font-medium text-gray-700 hover:bg-gray-50 active:scale-95 transition-all shrink-0" type="button">
+<span>Furnished</span>
+<svg class="w-3 h-3 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M19 9l-7 7-7-7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"></path>
+</svg>
+</button>
+<!-- Filter: Sliders Icon Button -->
+<button aria-label="Open advanced filters" class="p-1.5 rounded-full border border-gray-200 bg-white text-gray-700 hover:bg-gray-50 active:scale-95 transition-all shrink-0" type="button">
+<svg class="w-4 h-4 stroke-[1.8]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</button>
+</div>
+</section>
+<!-- END: QuickFilters -->
+<!-- BEGIN: ResultsMetaBar -->
+<!-- Results count and sort selector -->
+<div class="px-4 py-2.5 flex justify-between items-center bg-gray-50/60 shrink-0" data-purpose="results-summary">
+<span class="text-xs font-semibold text-gray-700 tracking-tight">320 homes</span>
+<div class="flex items-center gap-1 text-xs text-gray-500 font-medium cursor-pointer">
+<span>Sort by</span>
+<button class="text-gray-800 font-semibold inline-flex items-center gap-0.5" type="button">
+<span>Relevance</span>
+<svg class="w-3 h-3 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M19 9l-7 7-7-7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</button>
+</div>
+</div>
+<!-- END: ResultsMetaBar -->
+<!-- BEGIN: PropertyListingFeed -->
+<!-- Scrollable content area containing property cards -->
+<main class="flex-1 overflow-y-auto px-4 py-3 space-y-4 pb-24 hide-scrollbar" data-purpose="listings-container">
+<!-- Property Card 1: 2 BHK HSR Layout -->
+<article class="bg-white rounded-2xl p-2.5 border border-gray-100 shadow-sm flex flex-col gap-2 hover:border-gray-200 transition-all" data-purpose="listing-card">
+<!-- Image Container -->
+<div class="relative w-full h-44 rounded-xl overflow-hidden bg-gray-100">
+<img alt="Warm modern 2 BHK living room with comfortable sofa" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB-1ANxgW9vCN3CJVG4d3r8h-5aO7CZH9qNmR1MIZvkVsgufxK8idj3uTY1o6SorJjvu8fM8S9BpDlldP483bY6cVJeDW8oJdUxYENNh0dmpmdDxPZK_QvFuNbIt4Fu7NJB4aCN34Z5K3G8R5xOF82jzRXHZZTLH80XBNKlMCKFXjUmy1hbKzlTDgCXZ7d2lMzXnzyB0Vye_Lq4NOSfCUjJJk1_Tp4efV6FavtC6hpXE0S_un-x3jKe">
+<!-- Verified Badge -->
+<div class="absolute bottom-2.5 left-2.5 bg-verified-bg/95 backdrop-blur-sm border border-verified-badge/30 px-2.5 py-1 rounded-md flex items-center gap-1 text-[11px] font-semibold text-emerald-700 shadow-sm">
+<svg class="w-3.5 h-3.5 text-verified-badge" fill="currentColor" viewBox="0 0 20 20">
+<path clip-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" fill-rule="evenodd"></path>
+</svg>
+<span>Verified</span>
+</div>
+<!-- Favorite / Heart Button -->
+<button aria-label="Save listing" class="absolute top-2.5 right-2.5 p-1.5 bg-black/30 backdrop-blur-md rounded-full text-white hover:text-brand-coral transition-colors" type="button">
+<svg class="w-4 h-4 stroke-[2]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</button>
+</div>
+<!-- Details Info -->
+<div class="px-1 pt-1 pb-1">
+<div class="flex justify-between items-start">
+<div>
+<h2 class="text-base font-bold text-gray-900 leading-tight">2 BHK Apartment</h2>
+<p class="text-xs text-gray-500 mt-0.5">HSR Layout, Bangalore</p>
+</div>
+<!-- Heart icon alternative or status alignment -->
+<button aria-label="Favorite" class="text-gray-400 hover:text-brand-coral" type="button">
+<svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+<path d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</button>
+</div>
+<!-- Price -->
+<div class="mt-1 flex items-baseline">
+<span class="text-base font-bold text-brand-coral">₹32,000</span>
+<span class="text-xs text-gray-400 ml-1">/ month</span>
+</div>
+<!-- Specifications Row -->
+<div class="mt-2.5 pt-2 border-t border-gray-100 flex items-center gap-3.5 text-xs text-gray-500 font-medium">
+<span class="flex items-center gap-1">
+<svg class="w-3.5 h-3.5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M3 10h18M3 14h18m-9-4v8m-7 4h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+              2 Bed
+            </span>
+<span class="flex items-center gap-1">
+<svg class="w-3.5 h-3.5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+              2 Bath
+            </span>
+<span class="flex items-center gap-1">
+<svg class="w-3.5 h-3.5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+              1100 sq ft
+            </span>
+</div>
+</div>
+</article>
+<!-- Property Card 2: 1 BHK HSR Layout -->
+<article class="bg-white rounded-2xl p-2.5 border border-gray-100 shadow-sm flex flex-col gap-2 hover:border-gray-200 transition-all" data-purpose="listing-card">
+<!-- Image Container -->
+<div class="relative w-full h-44 rounded-xl overflow-hidden bg-gray-100">
+<img alt="Compact styled 1 BHK apartment with natural light" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA2FDfj6x3DpVAVvi3oRB9Kt9uRihyaZQLF2hyVaZCwRk2plrNc0evcNyHPSBv1anXgdAeefj_jSayNHa8LfxbECkoytjkXnVzYtyOPT1yfW8q0iEadmPUbSfVQuIVaxjUTCLGq4Zs-yAeUjQCAMBDQzC40WddhH6-9Q2lVY5YmZsELo_Tu0MykFmz-GvOoSU06dzFC07SvhtayQeDAZRznfS2qZTJQe7UBowqSKFkXeJPFWvv_zZKk">
+<!-- Verified Badge -->
+<div class="absolute bottom-2.5 left-2.5 bg-verified-bg/95 backdrop-blur-sm border border-verified-badge/30 px-2.5 py-1 rounded-md flex items-center gap-1 text-[11px] font-semibold text-emerald-700 shadow-sm">
+<svg class="w-3.5 h-3.5 text-verified-badge" fill="currentColor" viewBox="0 0 20 20">
+<path clip-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" fill-rule="evenodd"></path>
+</svg>
+<span>Verified</span>
+</div>
+<!-- Heart Button Overlay -->
+<button aria-label="Save listing" class="absolute top-2.5 right-2.5 p-1.5 bg-black/30 backdrop-blur-md rounded-full text-white hover:text-brand-coral transition-colors" type="button">
+<svg class="w-4 h-4 stroke-[2]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</button>
+</div>
+<!-- Details Info -->
+<div class="px-1 pt-1 pb-1">
+<div class="flex justify-between items-start">
+<div>
+<h2 class="text-base font-bold text-gray-900 leading-tight">1 BHK Apartment</h2>
+<p class="text-xs text-gray-500 mt-0.5">HSR Layout, Bangalore</p>
+</div>
+<button aria-label="Favorite" class="text-gray-400 hover:text-brand-coral" type="button">
+<svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+<path d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</button>
+</div>
+<!-- Price -->
+<div class="mt-1 flex items-baseline">
+<span class="text-base font-bold text-brand-coral">₹18,000</span>
+<span class="text-xs text-gray-400 ml-1">/ month</span>
+</div>
+<!-- Specs -->
+<div class="mt-2.5 pt-2 border-t border-gray-100 flex items-center gap-3.5 text-xs text-gray-500 font-medium">
+<span class="flex items-center gap-1">
+<svg class="w-3.5 h-3.5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M3 10h18M3 14h18m-9-4v8m-7 4h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+              1 Bed
+            </span>
+<span class="flex items-center gap-1">
+<svg class="w-3.5 h-3.5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+              1 Bath
+            </span>
+<span class="flex items-center gap-1">
+<svg class="w-3.5 h-3.5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+              650 sq ft
+            </span>
+</div>
+</div>
+</article>
+<!-- Property Card 3: 2 BHK Koramangala -->
+<article class="bg-white rounded-2xl p-2.5 border border-gray-100 shadow-sm flex flex-col gap-2 hover:border-gray-200 transition-all" data-purpose="listing-card">
+<!-- Image Container -->
+<div class="relative w-full h-44 rounded-xl overflow-hidden bg-gray-100">
+<img alt="Spacious Koramangala apartment interior" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB3QAFLyPNovmO_Bsacwz_tmLhR0uVzuC07aIrKvQvm7EiZK3di0GWULL1geiBEEO5Q_z3IZBP0Uk-Wj2vP2xY_Qdq9EiUV9xlejCEA1SaMBRuFCi22d44bQVqQFrumvj-QYBVXlTdT9E2hYr3Mh13f9HEO-s3cs3Sffz8KqhWLIUqLBo8-ljD07992K0iixaWGDJMyMXvnUK0CnEc7AkdZL5kCqYAkhPIP14VkmB24r1QIj0_y54PJ">
+<!-- Verified Badge -->
+<div class="absolute bottom-2.5 left-2.5 bg-verified-bg/95 backdrop-blur-sm border border-verified-badge/30 px-2.5 py-1 rounded-md flex items-center gap-1 text-[11px] font-semibold text-emerald-700 shadow-sm">
+<svg class="w-3.5 h-3.5 text-verified-badge" fill="currentColor" viewBox="0 0 20 20">
+<path clip-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" fill-rule="evenodd"></path>
+</svg>
+<span>Verified</span>
+</div>
+</div>
+<!-- Details Info -->
+<div class="px-1 pt-1 pb-1">
+<div class="flex justify-between items-start">
+<div>
+<h2 class="text-base font-bold text-gray-900 leading-tight">2 BHK Apartment</h2>
+<p class="text-xs text-gray-500 mt-0.5">Koramangala, Bangalore</p>
+</div>
+<button aria-label="Favorite" class="text-gray-400 hover:text-brand-coral" type="button">
+<svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+<path d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</button>
+</div>
+<!-- Price -->
+<div class="mt-1 flex items-baseline">
+<span class="text-base font-bold text-brand-coral">₹28,000</span>
+<span class="text-xs text-gray-400 ml-1">/ month</span>
+</div>
+<!-- Specs -->
+<div class="mt-2.5 pt-2 border-t border-gray-100 flex items-center gap-3.5 text-xs text-gray-500 font-medium">
+<span class="flex items-center gap-1">
+<svg class="w-3.5 h-3.5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M3 10h18M3 14h18m-9-4v8m-7 4h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+              2 Bed
+            </span>
+<span class="flex items-center gap-1">
+<svg class="w-3.5 h-3.5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+              1,100 sq ft
+            </span>
+</div>
+</div>
+</article>
+</main>
+<!-- END: PropertyListingFeed -->
+<!-- BEGIN: FloatingViewToggle -->
+<!-- Floating Map/List Switch Button over the bottom view -->
+<div class="absolute bottom-6 left-0 right-0 flex justify-center items-center pointer-events-none z-20" data-purpose="view-mode-toggle">
+<div class="pointer-events-auto bg-white/95 backdrop-blur-md rounded-full p-1 shadow-floating border border-gray-100 flex items-center gap-1 transition-transform active:scale-95">
+<!-- Map Option -->
+<button class="flex items-center gap-1.5 px-4 py-2 rounded-full text-xs font-semibold text-gray-600 hover:text-gray-900 transition-colors" type="button">
+<svg class="w-4 h-4 text-gray-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+<path d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<span>Map</span>
+</button>
+<!-- Divider line -->
+<div class="w-[1px] h-4 bg-gray-200"></div>
+<!-- List Option (Active) -->
+<button class="flex items-center gap-1.5 px-4 py-2 rounded-full text-xs font-semibold text-brand-coral bg-brand-coralLight/70 transition-colors" type="button">
+<svg class="w-4 h-4 text-brand-coral" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+<path d="M4 6h16M4 10h16M4 14h16M4 18h16" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<span>List</span>
+</button>
+</div>
+</div>
+<!-- END: FloatingViewToggle -->
+<!-- BEGIN: HomeIndicator -->
+<!-- iOS Home Indicator bottom bar -->
+<div class="w-full pb-2 pt-1 flex justify-center items-center bg-white shrink-0 z-30" data-purpose="ios-home-indicator">
+<div class="w-32 h-1 bg-gray-300 rounded-full"></div>
+</div>
+<!-- END: HomeIndicator -->
+</div>
+<!-- END: PhoneShellContainer -->
+</body></html>
